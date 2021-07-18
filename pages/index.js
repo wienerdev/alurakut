@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
@@ -23,6 +23,29 @@ function ProfileSideBar(propriedades) {
   )
 }
 
+function ProfileRelationBox(propriedades) {
+  return (
+    <ProfileRelationsBoxWrapper>
+      <h2 className="smallTitle">
+        {propriedades.title} ({propriedades.items.length})
+      </h2>
+
+      <ul>
+        {/* {seguidores.map((itemAtual) => {
+        return (
+          <li key={itemAtual}>
+            <a href={`https:/github.com/${itemAtual}.png`}>
+              <img src={itemAtual.image} />
+              <span>{itemAtual.title}</span>
+            </a>
+          </li>
+        )
+      })} */}
+      </ul>
+    </ProfileRelationsBoxWrapper>
+  )
+}
+
 export default function Home() {
   const githubUser = 'matheusnn9';
   const [comunidades, setComunidades] = React.useState([{
@@ -38,6 +61,23 @@ export default function Home() {
     'marcobrunodev',
     'felipefialho'
   ]
+
+  const [seguidores, setSeguidores] = React.useState([]);
+  // 0 - Pegar o array de dados do GitHub API
+  React.useEffect(function () {
+    fetch('https://api.github.com/users/peas/followers')
+      .then(function (respostaDoServidor) {
+        return respostaDoServidor.json();
+      })
+      .then(function (respostaCompleta) {
+        setSeguidores(respostaCompleta);
+      })
+  }, [])
+
+
+  // 1 - Criar um box que vai ter um map, baseado nos itens do array
+  // que pegamos do GitHub
+
   return (
     <>
       <AlurakutMenu />
@@ -67,7 +107,7 @@ export default function Home() {
 
               const comunidade = {
                 id: new Date().toISOString,
-                titulo: dadosDoForm.get('title'),
+                title: dadosDoForm.get('title'),
                 image: dadosDoForm.get('image'),
               }
               const comunidadesAtualizadas = [...comunidades, comunidade];
@@ -86,9 +126,9 @@ export default function Home() {
 
               <div>
                 <input
-                  placeholder="Coloque uma URL para usarmos de capa"
+                  placeholder="Coloque uma URL para usarmos de capa!"
                   name="image"
-                  arial-label="Coloque uma URL para usarmos de capa"
+                  arial-label="Coloque uma URL para usarmos de capa!"
                 />
               </div>
 
@@ -100,6 +140,8 @@ export default function Home() {
         </div>
 
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+
+          <ProfileRelationBox title="Seguidores" items={seguidores} />
 
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
