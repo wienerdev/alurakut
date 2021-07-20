@@ -1,5 +1,7 @@
 
 import React, { useEffect } from 'react';
+import nookies from 'nookies';
+import jwt from 'jsonwebtoken';
 import MainGrid from '../src/components/MainGrid'
 import Box from '../src/components/Box'
 import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
@@ -49,8 +51,8 @@ function ProfileRelationBox(propriedades) {
 }
 
 //Declaração das variáveis necessárias para fazer conexões de dados
-export default function Home() {
-  const githubUser = 'wienerdev';
+export default function Home(props) {
+  const githubUser = props.githubUser;
   const [comunidades, setComunidades] = React.useState([]);
   const pessoasFavoritas = [
     'juunegreiros',
@@ -225,4 +227,33 @@ export default function Home() {
       </MainGrid>
     </>
   )
+}
+
+// Componente do Next.JS que valida o usuário antes do servidor carregar o HTML
+export async function getServerSideProps(context) {
+  const cookies = nookies.get(context)
+  const token = cookies.user_token;
+
+  const { isAuthenticated } = await fetch('https://alurakut.vercel.app/api/auth', {
+    headers: {
+      Authorization: token
+    }
+  })
+  .then((resposta) => resposta.json())
+
+  if(!isAuthenticated) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      }
+    }
+  }
+
+  const { githubUser } = jwt.decode(token);
+  return {
+    props: {
+      githubUser
+    }, //will be passed to the page component as props
+  }
 }
