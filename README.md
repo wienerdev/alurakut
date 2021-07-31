@@ -13,13 +13,13 @@
 </p>
 </br>
 
-## Sobre o projeto 💬
+## 💬 Sobre o projeto
 
 O **Alurakut** é uma aplicação web clone do nosso queridíssimo e já falecido Orkut, porém trazendo uma interface mais moderna e utilizando as melhores tecnologias de desenvolvimento!
 
 <!-- Ao logar na aplicação com nosso username do GitHub vamos para a página home, nela vemos nossos amigos (seguidores do GitHub), as comunidades que participamos, e os últimos recados deixados. Além disso é possível criar novas comunidades e novos recados! -->
 
-## Funcionalidades 🧠
+## 🧠 Funcionalidades
 
 <ul>
   <li>Login com usuário do GitHub utilizando API;</li>
@@ -27,7 +27,7 @@ O **Alurakut** é uma aplicação web clone do nosso queridíssimo e já falecid
   <li>Possibilidade de criar comunidades com título e fotos, utilizando o DatoCMS;</li>
 </ul>
 
-## ✨ Tecnologias utilizadas
+## 🛠 Tecnologias utilizadas
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
@@ -38,7 +38,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Next.js](https://nextjs.org)
 - [Styled Components](https://styled-components.com)
 
-## Como utilizar? 📌
+## 📌 Como utilizar?
 
 _Para utilizar o **Alurakut**, basta acessá-lo diretamente no seu navegador! [Clique aqui](https://alurakut-wienerdev.vercel.app/login)_
 
