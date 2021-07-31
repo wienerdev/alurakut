@@ -66,7 +66,7 @@ export default function Home(props) {
   const [seguidores, setSeguidores] = React.useState([]);
   // 0 - Pegar o array de dados do GitHub API
   React.useEffect(function () {
-    fetch('https://api.github.com/users/peas/followers')
+    fetch(githubUser)
       .then(function (respostaDoServidor) {
         return respostaDoServidor.json();
       })
