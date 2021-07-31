@@ -9,7 +9,7 @@
 </p>
 <h2>🖥️ Tela principal: </h2>
 <p align="center">
-  <img src="./img/alura1.PNG" width="100%">
+  <img src="./img/alura2.PNG" width="100%">
 </p>
 </br>
 
