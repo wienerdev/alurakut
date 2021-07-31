@@ -17,6 +17,7 @@ export default function LoginScreen() {
                     <p><strong>Conecte-se</strong> aos seus amigos e familiares usando recados e mensagens instantâneas</p>
                     <p><strong>Conheça</strong> novas pessoas através de amigos de seus amigos e comunidades</p>
                     <p><strong>Compartilhe</strong> seus vídeos, fotos e paixões em um só lugar</p>
+                    <p><strong>By: wienerdev</strong></p>
                 </section>
 
                 <section className="formArea">
