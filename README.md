@@ -3,11 +3,11 @@
 </h1>
 <br>
 <br>
-<h2>🖥️ Tela de Login: </h2>
+<h2>🖥️ Tela de Login </h2>
 <p align="center">
   <img src="./img/alura1.PNG" width="100%">
 </p>
-<h2>🖥️ Tela principal: </h2>
+<h2>🖥️ Tela principal </h2>
 <p align="center">
   <img src="./img/alura2.PNG" width="100%">
 </p>
