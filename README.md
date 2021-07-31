@@ -1,12 +1,16 @@
 <h1 align="center">
-  <img alt="askr" title="Pomo.up" src=".github/logo-alurakut.svg" width="220px" />
+  <img src="https://raw.github.com/wienerdev/alurakut/main/img/logo_alurakut.png" width="220px" />
 </h1>
 <br>
 <br>
+<h2>🖥️ Tela de Login: </h2>
 <p align="center">
-  <img alt="askr" src=".github/alurakut.png" width="100%">
+  <img alt="Happy" src="https://raw.github.com/wienerdev/alurakut/main/img/alura1.png" width="100%">
 </p>
-<br>
+<h2>🖥️ Tela principal: </h2>
+<p align="center">
+  <img alt="Happy" src="https://raw.github.com/wienerdev/alurakut/main/img/alura2.png" width="100%">
+</p>
 
 ## Sobre o projeto 💬
 
